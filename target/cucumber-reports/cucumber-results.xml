@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="13.275">
+    <testcase classname="SearchBox Functionality" name="SearchBox functionality should work with a valid product name" time="13.131">
+        <failure message="text don't match expected [&quot;t-shirt&quot;] but found [&quot;&quot;t-shirt&quot;&quot;]" type="java.lang.AssertionError">
+            <![CDATA[Given user is landed on amazon homepage.....................................passed
+And user  should be able to enter valid product name........................passed
+When user  should be able to click on search button.........................passed
+Then user should see the valid product appears..............................failed
+
+StackTrace:
+java.lang.AssertionError: text don't match expected ["t-shirt"] but found [""t-shirt""]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at configuration.common.GlobalReUsableMethods.verifyText(GlobalReUsableMethods.java:395)
+	at stepdefinitions.SearchBoxSteps.user_should_see_the_valid_product_appears(SearchBoxSteps.java:43)
+	at ✽.user should see the valid product appears(file:///C:/Users/auni8/IdeaProjects/BDD_Framework_HomeWork/src/test/java/features/SearchBox.feature:12)
+]]>
+        </failure>
+    </testcase>
+</testsuite>

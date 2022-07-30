@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8 s <<< FAILURE! - in TestSuite
+runner.RegressionTestRunner.runScenario["SearchBox functionality should work with a valid product name", "SearchBox Functionality"](1)  Time elapsed: 5.858 s  <<< FAILURE!
+io.cucumber.testng.UndefinedStepException: 
+The step 'user is landed on amazon homepage' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Given("user is landed on amazon homepage")
+public void user_is_landed_on_amazon_homepage() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
