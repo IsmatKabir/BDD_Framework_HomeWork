@@ -1,20 +1,10 @@
 
 @RegressionTest
-Scenario: SearchBox functionality should work with a valid product name # src/test/java/features/SearchBox.feature:8
-  Given user is landed on amazon homepage                               # stepdefinitions.SearchBoxSteps.user_is_landed_on_amazon_homepage()
-  And user  should be able to enter valid product name                  # stepdefinitions.SearchBoxSteps.user_should_be_able_to_enter_valid_product_name()
-  When user  should be able to click on search button                   # stepdefinitions.SearchBoxSteps.user_should_be_able_to_click_on_search_button()
-  Then user should see the valid product appears                        # stepdefinitions.SearchBoxSteps.user_should_see_the_valid_product_appears()
-      java.lang.AssertionError: text don't match expected ["t-shirt"] but found [""t-shirt""]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-	at org.testng.Assert.assertEquals(Assert.java:131)
-	at org.testng.Assert.assertEquals(Assert.java:655)
-	at configuration.common.GlobalReUsableMethods.verifyText(GlobalReUsableMethods.java:395)
-	at stepdefinitions.SearchBoxSteps.user_should_see_the_valid_product_appears(SearchBoxSteps.java:43)
-	at ✽.user should see the valid product appears(file:///C:/Users/auni8/IdeaProjects/BDD_Framework_HomeWork/src/test/java/features/SearchBox.feature:12)
-
-
-    Embedding demo1 [image/png 458919 bytes]
-
+Scenario Outline: checking Amazon search box functionality using valid products name # src/test/java/features/SearchBox.feature:30
+  And user should be able to enter valid "Bluetooth earbuds"                         # stepdefinitions.SearchBoxSteps.user_should_be_able_to_enter_valid(java.lang.String)
+  And user  should be able to click on search button                                 # stepdefinitions.SearchBoxSteps.user_should_be_able_to_click_on_search_button()
+  And user should be able to click on Free Shipping by Amazon                        # stepdefinitions.SearchBoxSteps.user_should_be_able_to_click_on_free_shipping_by_amazon()
+  And user should be able to enter Minimum price in price edit field                 # stepdefinitions.SearchBoxSteps.user_should_be_able_to_enter_minimum_price_in_price_edit_field()
+  And user should be able to enter Maximum price in price edit field                 # stepdefinitions.SearchBoxSteps.user_should_be_able_to_enter_maximum_price_in_price_edit_field()
+  When users should be able to click on Go button                                    # stepdefinitions.SearchBoxSteps.users_should_be_able_to_click_on_go_button()
+  Then users should able to see "Bluetooth earbuds" displayed                        # stepdefinitions.SearchBoxSteps.users_should_able_to_see_displayed(java.lang.String)

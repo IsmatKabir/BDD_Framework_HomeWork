@@ -1,19 +1,37 @@
 Feature: SearchBox Functionality
 
+Background:  Given user is landed on amazon homepage
 
 
 
-
-   @RegressionTest
+   @RegressionTest@pending  # test case 1
     Scenario: SearchBox functionality should work with a valid product name
-    Given user is landed on amazon homepage
+
     And  user  should be able to enter valid product name
     When user  should be able to click on search button
-    Then user should see the valid product appears
+    Then user should see Eligible for free shipping
+
+
+ @RegressionTest
+ Scenario Outline: checking Amazon search box functionality using valid products name
+
+  And user should be able to enter valid "<productName>"
+ And user  should be able to click on search button
+ And  user should be able to click on Free Shipping by Amazon
+  And user should be able to enter Minimum price in price edit field
+  And user should be able to enter Maximum price in price edit field
+  When users should be able to click on Go button
+  Then users should able to see "<productName>" displayed
 
 
 
-
+  Examples:
+   | productName                   |
+   | Bluetooth earbuds             |
+#   | air purifier                  |
+#   | Coffee Gator Espresso Machine |
+#   | airpods pro case              |
+#   | speaker home theater system   |
 
 
 

@@ -37,14 +37,50 @@ public class SearchBoxSteps extends WebTestBase {
         waitFor(5);
 
     }
-    @Then("user should see the valid product appears")
-    public void user_should_see_the_valid_product_appears() throws InterruptedException {
+    @Then("user should see Eligible for free shipping")
+    public void user_should_see_eligible_for_free_shipping() throws InterruptedException {
 
-        verifyText(searchBox.verifySearchedProduct,"\"t-shirt\"","text don't match");
-        waitFor(3);
+//        verifyText(searchBox.verifySearchedProduct,"Eligible for Free Shipping","text don't match");
+//        waitFor(3);
+        searchBox.searchResultDisplayed("Eligible for Free Shipping");
+
     }
 
+  //  --------------------------------------------------------------------------------------------------------------
 
+
+
+    @Given("user should be able to enter valid {string}")
+    public void user_should_be_able_to_enter_valid(String productName) throws InterruptedException {
+    searchBox.enteringProDuctINSearchBox1(productName);
+    waitFor(3);
+    }
+
+    @Given("user should be able to click on Free Shipping by Amazon")
+    public void user_should_be_able_to_click_on_free_shipping_by_amazon() throws InterruptedException {
+    searchBox.clickingFreeShipping();
+    waitFor(3);
+    }
+    @Given("user should be able to enter Minimum price in price edit field")
+    public void user_should_be_able_to_enter_minimum_price_in_price_edit_field() throws InterruptedException {
+    searchBox.enteringMinimumPrice();
+    waitFor(3);
+    }
+    @Given("user should be able to enter Maximum price in price edit field")
+    public void user_should_be_able_to_enter_maximum_price_in_price_edit_field() throws InterruptedException {
+     searchBox.enteringMaximumPrice();
+     waitFor(3);
+    }
+    @When("users should be able to click on Go button")
+    public void users_should_be_able_to_click_on_go_button() throws InterruptedException {
+    searchBox.clickingButton();
+    waitFor(3);
+    }
+    @Then("users should able to see {string} displayed")
+    public void users_should_able_to_see_displayed(String productName) throws InterruptedException {
+        verifyText(searchBox.verifyEligibleForFreeShippingProducts, "\"" + productName + "\"", "Product name does not match");
+        waitFor(6);
+    }
 
 
 

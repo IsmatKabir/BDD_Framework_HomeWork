@@ -32,11 +32,12 @@ import java.util.Properties;
 
 public class WebTestBase {
     // Create Driver
+    //    // this is ismat one  Temp Email for BrowserStack = nixici9856@storypo.com and password nixici9856 and fullname nixici
     public static WebDriver driver;
     static Properties readProperty = ReadPropertiesFrom.loadProperties("src/main/resources/Config.properties");
     public static final String BROWSERSTACK_URL = "https://" + readProperty.getProperty("BROWSERSTACK_USERNAME") + ":" + readProperty.getProperty("BROWSERSTACK_ACCESS_KEY") + "@hub-cloud.browserstack.com/wd/hub";
-    public static final String SAUCELABS_USERNAME = "xodale3453";
-    public static final String SAUCELABS_ACCESS_KEY = "8f00028a-cb82-46e2-a137-263a99a0ca08";
+    public static final String SAUCELABS_USERNAME = "nixici_vWrUnG";
+    public static final String SAUCELABS_ACCESS_KEY = "6GpPzm4FuTPqreZfqpsu";
     public static final String SAUCELABS_URL = "https://" + SAUCELABS_USERNAME + ":" + SAUCELABS_ACCESS_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
 
     protected String getStackTrace(Throwable t) {
